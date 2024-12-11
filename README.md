@@ -1,1 +1,1 @@
-# Multiple-Disease-Prediction
+# Disease-Prediction
