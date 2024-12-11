@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Disease Predictor{% endblock title %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card text-center">
+        {% load static %}
+        <img src="{% static 'image/OIP.jpeg' %}" class="card-img-top" alt="Heart Image" />
+        <div class="card-body">
+            <h5 class="card-title">Heart Diseases Prediction</h5>
+            <a href="{% url 'heart' %}" class="btn btn-danger text-uppercase">KNOW HEART HEALTH STATUS</a>
+        </div>
+    </div>
+</div>
+<a href="{% url 'stroke' %}" class="btn btn-danger text-uppercase">KNOW Stroke STATUS</a>
+{% endblock content %}
