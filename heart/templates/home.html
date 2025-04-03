@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Disease Predictor{% endblock title %}
+
+{% block content %}
+<div class="container" style="height: 100%;">
+    <h1 class="text-center mb-4">Disease Prediction</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card text-center">
+                {% load static %}
+                <img src="{% static 'image/OIP.jpeg' %}" class="card-img-top" alt="Heart Image" />
+                <div class="card-body">
+                    <h5 class="card-title">Heart Diseases Prediction</h5>
+                    <a href="{% url 'heart' %}" class="btn btn-danger text-uppercase">KNOW HEART HEALTH STATUS</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card text-center">
+                {% load static %}
+                <img src="{% static 'image/OIP (2).jpeg' %}" class="card-img-top" alt="Stroke Image" />
+                <div class="card-body">
+                    <h5 class="card-title">Stroke Diseases Prediction</h5>
+                    <a href="{% url 'stroke' %}" class="btn btn-danger text-uppercase">KNOW STROKE STATUS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block head_css %}
+    <style>
+        body {
+            background-color: #bdc0c3; /* Light grey background */
+            display: flex; /* Make body a flex container */
+            flex-direction: column; /* Arrange children in a column */
+            min-height: 100vh; /* Full height */
+        }
+        .content {
+            flex: 1; /* Take up available space */
+        }
+        .card {
+            width: 100%; /* Make the card take full width */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+            border-radius: 15px; /* Rounded corners */
+            overflow: hidden; /* Ensure content stays within rounded corners */
+            border: black;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Slightly increase size on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        .card-img-top {
+            height: 200px; /* Fixed height for the image */
+            object-fit: cover; /* Cover the space while maintaining aspect ratio */
+        }
+
+        .card-title {
+            font-size: 1.5rem; /* Increase font size */
+        }
+
+        .btn-danger {
+            background-color: #dc3545; /* Bootstrap danger color */
+            border: none; /* Remove border */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker shade on hover */
+        }
+    </style>
+{% endblock head_css %}
